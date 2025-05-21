@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind : Deployment
+metadata:
+  name: devops-project1
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: devops
+    template:
+      metadata:
+        labels:
+          app: devops
+      spec:
+        conntainers:
+        - name: devops-container
+          image: abhi8665/devops-project1
+          ports:
+          - containerPort: 80 
